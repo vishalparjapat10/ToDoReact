@@ -17,15 +17,17 @@ export default class Todo extends Component {
         })
     }
 
-    handleAddTask = () =>{
+    handleAddTask = (e) =>{
         let tasks = this.state.tasks;
         let tasksArr = JSON.parse(localStorage.getItem("tasks"));
         let uid = uuidv4();
         let newTask = {id: uid,task: this.state.curTask};
+        // if first task is being added
         if(!tasksArr){
             tasksArr = [];
         }
         tasksArr.push(newTask);
+        e.preventDefault();
         localStorage.setItem("tasks", JSON.stringify(tasksArr));
         this.setState({
             tasks: [...tasks,newTask],
@@ -42,8 +44,11 @@ export default class Todo extends Component {
     }
 
     async componentDidMount(){
-        console.log("Hello");
+        console.log("Hello there!");
         let tasksArr = JSON.parse(localStorage.getItem("tasks"));
+        if(!tasksArr){
+            tasksArr = [];
+        }
         this.setState({
             tasks: tasksArr
         })
