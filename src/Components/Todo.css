@@ -1,0 +1,15 @@
+.header{
+    background-color: aqua;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+}
+
+.header>h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
