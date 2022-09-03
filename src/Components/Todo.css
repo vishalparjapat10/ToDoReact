@@ -53,7 +53,6 @@
     font-size: 17px;
     padding: 0px;
     margin-left: 4px;
-    /* padding-bottom: 4px; */
     text-align: center;
     cursor: pointer;
     transition-duration: 0.3s;
@@ -64,3 +63,60 @@
     background-color: #404344;
   
   }
+
+  @media screen and
+(max-width:1000px){
+  
+  .todo-task>button{
+    font-size: 14px;
+    margin-left: 13px;
+    width: 8%;
+  }
+}
+
+@media screen and
+(max-width:500px){
+   .todo-task>h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .todo-task>button{
+    font-size: 14px;
+    margin-left: 13px;
+    width: 14%;
+  }
+}
+
+@media screen and
+(max-width:400px){
+  .todo-navbar{
+    width: 100%;
+  }
+  .todo-input{
+    display: flex;
+    flex-direction: column;
+  }
+  .todo-input>input{
+    font-size: 1.2rem;
+    width: 90%;
+  }
+  .todo-input>button{
+    font-size: 15px;
+    padding: 4px;
+    padding-bottom: 4px;
+    width: 92%;
+  }
+  .empty-head{
+    text-align: center;
+  }
+  .empty-head>h1{
+    font-size: 1.2rem;
+  }
+  .todo-task>button{
+    font-size: 15px;
+    margin-left: 11px;
+    width: 18%;
+  }
+  
+}

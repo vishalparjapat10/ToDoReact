@@ -46,9 +46,9 @@ export default class Todo extends Component {
             <div className='todo-tasks'>
                 {
                     this.state.tasks.length == 0 ?
-                    <h1 style={{textAlign:"center"}}>
-                        List is Empty!<br></br>Please Add Tasks
-                    </h1>
+                    <div>
+                        <h1 style={{textAlign:"center"}}>List is Empty!<br></br>Please Add Tasks</h1>
+                    </div>
                     :
                     this.state.tasks.map((taskObj) => (
                         <li key={taskObj.id} className='todo-task'>
