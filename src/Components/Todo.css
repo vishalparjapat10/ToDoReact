@@ -1,15 +1,66 @@
-.header{
-    background-color: aqua;
-    /* text-align: center; */
+.todo-navbar{
+    background-color: #404344;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 4rem;
 }
 
-.header>h1{
+.todo-navbar>h1{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
+.todo-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.todo-input>input{
+    font-size: 1.5rem;
+}
+
+.todo-input>button{
+    font-size: 1rem;
+    padding: 6px;
+    width: 7rem;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.todo-input>button:hover{
+    background-color: #404344;
+  }
+.todo-tasks{
+    margin-top: 3rem;
+}
+
+.todo-task{
+  background-color: #ED6436;
+  border: 1px solid black;
+  list-style: none;
+  padding-bottom: 24px;
+}
+
+.todo-task>h2{
+    margin-left: 4px;
+}
+
+.todo-task>button{
+    font-size: 17px;
+    padding: 0px;
+    margin-left: 4px;
+    /* padding-bottom: 4px; */
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    width: 5%;
+    height: px;
+  }
+  .todo-task>button:hover{
+    background-color: #404344;
+  
+  }
