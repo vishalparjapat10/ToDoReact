@@ -19,8 +19,14 @@ export default class Todo extends Component {
 
     handleAddTask = () =>{
         let tasks = this.state.tasks;
+        let tasksArr = JSON.parse(localStorage.getItem("tasks"));
         let uid = uuidv4();
         let newTask = {id: uid,task: this.state.curTask};
+        if(!tasksArr){
+            tasksArr = [];
+        }
+        tasksArr.push(newTask);
+        localStorage.setItem("tasks", JSON.stringify(tasksArr));
         this.setState({
             tasks: [...tasks,newTask],
             curTask: ""
@@ -29,8 +35,17 @@ export default class Todo extends Component {
 
     handleDeleteTask = (id) =>{
         let upadtedTasks = this.state.tasks.filter((task) => task.id != id);
+        localStorage.setItem("tasks", JSON.stringify(upadtedTasks));
         this.setState({
             tasks: [...upadtedTasks]
+        })
+    }
+
+    async componentDidMount(){
+        console.log("Hello");
+        let tasksArr = JSON.parse(localStorage.getItem("tasks"));
+        this.setState({
+            tasks: tasksArr
         })
     }
   render() {
@@ -45,7 +60,7 @@ export default class Todo extends Component {
             </div>
             <div className='todo-tasks'>
                 {
-                    this.state.tasks.length == 0 ?
+                    !this.state.tasks || this.state.tasks.length == 0 ?
                     <div>
                         <h1 style={{textAlign:"center"}}>List is Empty!<br></br>Please Add Tasks</h1>
                     </div>
